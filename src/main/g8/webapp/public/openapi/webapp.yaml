@@ -1,0 +1,31 @@
+openapi: 3.0.2
+info:
+  title: $name$
+  version: v1
+servers:
+  - url: 'http://localhost:9000'
+    description: Localhost
+
+components:
+  schemas:
+
+paths:
+  /:
+    get:
+      summary: Reground using yaml ontology and options provided
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/regroundRequest'
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/regroundResponse"
+
+  hello:
+    get:
+      summary:
